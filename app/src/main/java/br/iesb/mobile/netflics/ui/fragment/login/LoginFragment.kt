@@ -57,7 +57,7 @@ class LoginFragment : Fragment() {
 
             when (it) {
                 is LoginResult.Success -> {
-                    requireActivity().finish()
+                    requireActivity().finish() /* fechar atividade atual */
                     findNavController().navigate(R.id.action_loginFragment_to_mainActivity)
                 }
                 is LoginResult.Error -> Toast.makeText(context, it.message, Toast.LENGTH_LONG)

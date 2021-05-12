@@ -46,6 +46,10 @@ class SignUpFragment : Fragment() {
             }
         }
 
+
     }
 
+    fun signup() {
+        viewmodel.signup()
+    }
 }

@@ -21,10 +21,18 @@ class LoginViewModel @Inject constructor(
     val password = MutableLiveData<String>()
     val passwordCheck = MutableLiveData<String>()
     val result = MutableLiveData<LoginResult<Nothing>>()
+//    val result = MutableLiveData<String>()
 
     fun login() {
         viewModelScope.launch {
             result.value = interactor.login(email.value, password.value)
+//            try {
+//                result.value = interactor.login(email.value, password.value)
+//            } catch (t: Throwable){
+//                Log.d("NETFLICS", "Login Error:  ${t.localizedMessage}")
+//                result.value = t.localizedMessage
+//            }
+
         }
     }
 

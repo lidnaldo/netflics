@@ -47,7 +47,8 @@ class LoginInteractor @Inject constructor(
         return when (ex) {
             null -> repo.signup(credential!!.first, credential.second)
             else -> LoginResult.Error(ex.localizedMessage, ex)
-        }    }
+        }
+    }
 
     suspend fun forgot(email: String?): LoginResult<Nothing> {
         if (email.isNullOrBlank()) {

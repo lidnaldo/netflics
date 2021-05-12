@@ -3,10 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
+<!--        utilizada para linkar botao de Entrar-->
         <variable
             name="fragment"
             type="br.iesb.mobile.netflics.ui.fragment.login.LoginFragment" />
 
+<!--        utilizado para linkar view model com botoes de email e senha-->
         <variable
             name="viewmodel"
             type="br.iesb.mobile.netflics.viewmodel.LoginViewModel" />
