@@ -5,11 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import br.iesb.mobile.netflics.R
 import br.iesb.mobile.netflics.databinding.FragmentOnboardingBinding
 import br.iesb.mobile.netflics.ui.adapter.OnboardingAdapter
 import br.iesb.mobile.netflics.ui.fragment.screen.OnboardingFirstScreenFragment
 import br.iesb.mobile.netflics.ui.fragment.screen.OnboardingSecondScreenFragment
 import br.iesb.mobile.netflics.ui.fragment.screen.OnboardingThirdScreenFragment
+
 
 class OnboardingFragment : Fragment() {
 
@@ -39,8 +42,8 @@ class OnboardingFragment : Fragment() {
         return binding.root
     }
 
-    @SuppressWarnings
+    @Suppress("UNUSED_PARAMETER")
     fun start(v: View) {
-
+        findNavController().navigate(R.id.action_onboardingFragment_to_loginFragment)
     }
 }
