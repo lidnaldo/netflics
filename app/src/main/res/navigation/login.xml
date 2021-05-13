@@ -60,5 +60,4 @@
         android:name="br.iesb.mobile.netflics.ui.activity.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
-
 </navigation>

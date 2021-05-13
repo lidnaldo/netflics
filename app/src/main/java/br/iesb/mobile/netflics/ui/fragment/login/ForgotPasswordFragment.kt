@@ -10,7 +10,6 @@ import androidx.fragment.app.viewModels
 import br.iesb.mobile.netflics.R
 import br.iesb.mobile.netflics.databinding.FragmentForgotPasswordBinding
 import br.iesb.mobile.netflics.domain.AppResult
-import br.iesb.mobile.netflics.domain.LoginResult
 import br.iesb.mobile.netflics.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -38,11 +37,11 @@ class ForgotPasswordFragment : Fragment() {
 
         viewmodel.result.observe(viewLifecycleOwner) {
             when (it) {
-                is LoginResult.Success -> {
+                is AppResult.Success -> {
                     requireActivity().finish()
                     Toast.makeText(context, getText(R.string.reset_password_email_sent), Toast.LENGTH_LONG).show()
                 }
-                is LoginResult.Error -> Toast.makeText(context, it.message, Toast.LENGTH_LONG).show()
+                is AppResult.Error -> Toast.makeText(context, it.message, Toast.LENGTH_LONG).show()
             }
         }
     }

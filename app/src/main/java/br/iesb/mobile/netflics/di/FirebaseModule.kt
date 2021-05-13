@@ -1,6 +1,7 @@
 package br.iesb.mobile.netflics.di
 
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import dagger.Module
 import dagger.Provides
@@ -13,5 +14,8 @@ class FirebaseModule {
 
     @Provides
     fun provideFirebaseAuth() = Firebase.auth
+
+    @Provides
+    fun provideFireStore() = Firebase.firestore
 
 }
