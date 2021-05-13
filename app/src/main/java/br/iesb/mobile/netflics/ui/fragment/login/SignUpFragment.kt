@@ -45,8 +45,6 @@ class SignUpFragment : Fragment() {
                 is LoginResult.Error -> Toast.makeText(context, it.message, Toast.LENGTH_LONG).show()
             }
         }
-
-
     }
 
     fun signup() {

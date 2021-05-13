@@ -9,7 +9,7 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-class LoginModule {
+class FirebaseModule {
 
     @Provides
     fun provideFirebaseAuth() = Firebase.auth
