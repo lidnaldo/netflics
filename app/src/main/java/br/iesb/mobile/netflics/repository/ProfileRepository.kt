@@ -11,23 +11,23 @@ import kotlin.coroutines.suspendCoroutine
 class ProfileRepository @Inject constructor(
     private val firestore: FirebaseFirestore,
 ) {
-
-    suspend fun createOrUpdateProfile(p: Profile): AppResult<Nothing> = suspendCoroutine { nextStep ->
-        val data = hashMapOf(
-            "id" to p.id,
-            "name" to p.name
-        )
-        firestore.collection("profile").document(p.id!!)
-            .set(data)
-            .addOnCompleteListener { op ->
-                val res = if (op.isSuccessful) {
-                    AppResult.Success()
-                } else {
-                    AppResult.Error(op.exception?.localizedMessage, op.exception)
+    suspend fun createOrUpdateProfile(p: Profile): AppResult<Nothing> =
+        suspendCoroutine { nextStep ->
+            val data = hashMapOf(
+                "id" to p.id,
+                "name" to p.name
+            )
+            firestore.collection("profile").document(p.id!!)
+                .set(data)
+                .addOnCompleteListener { op ->
+                    val res = if (op.isSuccessful) {
+                        AppResult.Success()
+                    } else {
+                        AppResult.Error(op.exception?.localizedMessage, op.exception)
+                    }
+                    nextStep.resume(res)
                 }
-                nextStep.resume(res)
-            }
-    }
+        }
 
     suspend fun loadProfiles(): AppResult<List<Profile>> = suspendCoroutine { nextStep ->
         firestore.collection("profile")

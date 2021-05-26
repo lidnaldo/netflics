@@ -47,6 +47,8 @@ class SelectProfileFragment : Fragment(), LifecycleObserver {
         return binding.root
     }
 
+
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         activity?.lifecycle?.addObserver(this)

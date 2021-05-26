@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.MutableLiveData
-import br.iesb.mobile.netflics.databinding.FragmentProfileBottomSheetBinding
+import br.iesb.mobile.netflics.databinding.*
 import br.iesb.mobile.netflics.domain.AppResult
 import br.iesb.mobile.netflics.domain.Profile
 import br.iesb.mobile.netflics.viewmodel.ProfileViewModel
